@@ -1,0 +1,103 @@
+unit u_Business;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons,dm_Connections;
+
+type
+  TfrmBusiness = class(TForm)
+    pnlInfo: TPanel;
+    dbDispatch: TDBGrid;
+    dbDriver: TDBGrid;
+    dbVehicle: TDBGrid;
+    pnlInteract: TPanel;
+    bitbtnSignOut: TBitBtn;
+    btibtnClose: TBitBtn;
+    lblDispatch: TLabel;
+    lblDrivers: TLabel;
+    lblVehicles: TLabel;
+    memOutput: TMemo;
+    bitbtnReport: TBitBtn;
+    bitbtnFileDispatch: TBitBtn;
+    bitbtnCreateNewDispatch: TBitBtn;
+    edtDestination: TEdit;
+    edtCargo: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    lblDriver: TLabel;
+    lblVehicleLicence: TLabel;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    lblBusinessID: TLabel;
+    bitbtnDelete: TBitBtn;
+    bitbtnEdit: TBitBtn;
+    bitbtnAddInfo: TBitBtn;
+    procedure bitbtnSignOutClick(Sender: TObject);
+    procedure bitbtnReportClick(Sender: TObject);
+    procedure btibtnCloseClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure ConnectDataBase(Sender: Tobject);
+  end;
+
+var
+  frmBusiness: TfrmBusiness;
+
+implementation
+
+{$R *.dfm}
+
+uses u_SignUp, u_Dispatch;
+
+procedure TfrmBusiness.bitbtnReportClick(Sender: TObject);
+begin
+//information selected will be displayed in the redo output
+end;
+
+procedure TfrmBusiness.bitbtnSignOutClick(Sender: TObject);
+begin
+frmSignUp.show;
+frmBusiness.Close;
+
+end;
+
+
+
+procedure TfrmBusiness.btibtnCloseClick(Sender: TObject);
+begin
+//create a login cookie for seemless login
+frmsignup.Close;
+end;
+
+procedure TfrmBusiness.ConnectDataBase(Sender: Tobject);
+begin
+
+
+//connect dbgrid
+end;
+
+procedure TfrmBusiness.FormActivate(Sender: TObject);
+var
+sSql: string;
+begin
+
+
+dbDispatch.Columns[0].Width := 50;
+dbDispatch.Columns[1].Width := 50;
+dbDispatch.Columns[2].Width := 50;
+dbDispatch.Columns[3].Width := 50;
+dbDispatch.Columns[4].Width := 50;
+dbDispatch.Columns[5].Width := 60;
+dbDispatch.Columns[6].Width := 60;
+
+
+end;
+
+
+end.
