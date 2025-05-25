@@ -38,13 +38,10 @@ implementation
 
 {$R *.dfm}
 
-uses u_Driver, u_Business, dm_Connections, u_Quering;
+uses u_Driver, u_Business, dm_Connections;
 
 
 procedure TfrmLogIn.bitbtnLoginClick(Sender: TObject);
-var
-objQuering: TQuering;
-bChecking: boolean;
 begin
   if FileAge('cookie.txt') <> -1 then
   begin
@@ -53,27 +50,17 @@ begin
   end;
   if cbxDriver.Checked then
   begin
-    bChecking := true;
-    if objQuering.Login(edtPassword.Text, edtUsername.Text, bChecking) then
-    begin
+
 
     frmDriverMap.Show;
     frmLogin.Close;
-
-    end;
   end
   else
   begin
 
-    bChecking := false;
-    if objQuering.Login(edtPassword.Text, edtUsername.Text, bChecking) then
-    begin
 
     frmBusiness.Show;
     frmLogin.Close;
-
-    end;
-    
   end;
 
 

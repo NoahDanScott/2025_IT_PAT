@@ -110,7 +110,7 @@ begin
   cbxDriver.Checked := true;
 
 
-  try
+ { try
     if FileAge('cookie.txt') <> -1 then
     begin
       frmLogIn.Show;
@@ -118,7 +118,7 @@ begin
     end;
   except
 
-  end;
+  end;}
 end;
 
 end.

@@ -40,8 +40,6 @@ type
 
   public
     { Public declarations }
-    var
-    BusinessID : string;
   end;
 
 
@@ -79,7 +77,6 @@ begin
   begin
     bCondition := false;
     objDispatch.NewAccount(bCondition,edtBusinessName.Text,edtName.Text,edtSurname.Text,edtPassword.Text, strtoint(edtBusinessID.Text));
-    BusinessID := dmConnections.qry.FieldByName('Business_ID').AsString;
     frmBusiness.Show;
     frmSignUp.Hide;
   end;
@@ -110,7 +107,7 @@ begin
   cbxDriver.Checked := true;
 
 
-  try
+ { try
     if FileAge('cookie.txt') <> -1 then
     begin
       frmLogIn.Show;
@@ -118,7 +115,7 @@ begin
     end;
   except
 
-  end;
+  end;}
 end;
 
 end.

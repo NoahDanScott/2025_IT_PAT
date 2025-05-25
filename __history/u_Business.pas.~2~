@@ -57,7 +57,7 @@ uses u_SignUp, u_Dispatch;
 
 procedure TfrmBusiness.bitbtnReportClick(Sender: TObject);
 begin
-//information selected will be displayed in the redoutput
+//information selected will be displayed in the redo output
 end;
 
 procedure TfrmBusiness.bitbtnSignOutClick(Sender: TObject);
@@ -71,6 +71,7 @@ end;
 
 procedure TfrmBusiness.btibtnCloseClick(Sender: TObject);
 begin
+//create a login cookie for seemless login
 frmsignup.Close;
 end;
 
